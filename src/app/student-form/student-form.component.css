@@ -1,0 +1,40 @@
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .example-full-width:nth-last-child() {
+    margin-bottom: 10px;
+  }
+  
+  .button-row {
+    margin: 10px 0;
+  }
+  
+  .mat-form-field{
+      height: 65px;
+  }
+
+  form {
+      margin-top: 100px;
+    width: 50%;
+    border: 1px solid gray;
+    padding: 20px 10px;
+    background-color: lightblue;
+  }
+
+
+.mat-error {
+    /* margin-top: 5px; */
+    color: #f44336;
+    font-size: 75%;
+}
+.two-buttons{
+    margin:0 30px;
+}

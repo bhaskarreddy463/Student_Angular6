@@ -1,0 +1,35 @@
+<div class="example-container mat-elevation-z8">
+  <div class= "main-heading"> Students Result Board</div>
+  <table mat-table #table matSort [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+          
+    <!-- Title Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Student Name </th>
+      <td mat-cell *matCellDef="let element" class="isbn-col" [ngClass]="{'fail':element.status=='Fail', 'pass':element.status=='Pass', 'topper':element.status=='Topper'}"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="rollNumber">
+      <th mat-header-cell *matHeaderCellDef> Roll Number </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'fail':element.status=='Fail', 'pass':element.status=='Pass', 'topper':element.status=='Topper'}"> {{element.rollNumber}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="totalMarks">
+      <th mat-header-cell *matHeaderCellDef> Total Marks </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="{'fail':element.status=='Fail', 'pass':element.status=='Pass', 'topper':element.status=='Topper'}"> {{element.totalMarks}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element" [ngClass]="{'fail':element.status=='Fail', 'pass':element.status=='Pass', 'topper':element.status=='Topper'}"> {{element.status}} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <button mat-button class="student-form" [routerLink]="['/student-form']">Student Form</button>
+</div>
